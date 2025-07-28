@@ -18,7 +18,7 @@ class EventEmitter {constructor(){this.events={}}on(t,e){(Array.isArray(t)?t:[t]
 
 const plppdo = new EventEmitter();
 
-new MutationObserver(mutationsList => 
+new MutationObserver(mutationsList =>
   mutationsList.some(m => m.type === 'childList') && plppdo.emit('domChanged')
 ).observe(document.body, { childList: true, subtree: true });
 
